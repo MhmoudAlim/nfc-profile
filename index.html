@@ -135,6 +135,26 @@
             transition: all 0.2s ease;
             position: relative;
             overflow: hidden;
+            isolation: isolate;
+        }
+        
+        .quick-action::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+            z-index: -1;
+        }
+        
+        .quick-action:active::before {
+            width: 200%;
+            height: 200%;
         }
         
         .quick-action:hover {
@@ -215,6 +235,26 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 4px 16px rgba(91, 124, 250, 0.3);
+            isolation: isolate;
+        }
+        
+        .save-contact::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.4s ease, height 0.4s ease;
+            z-index: -1;
+        }
+        
+        .save-contact:active::before {
+            width: 400%;
+            height: 400%;
         }
         
         .save-contact:hover {
